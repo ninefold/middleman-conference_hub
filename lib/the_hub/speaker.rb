@@ -10,6 +10,10 @@ module TheHub
       data[:twitter]
     end
 
+    def github
+      data[:github]
+    end
+
     def site
       data[:site]
     end
@@ -18,8 +22,16 @@ module TheHub
       data[:interview]
     end
 
+    def image
+      data[:image]
+    end
+
+    def description
+      data[:description]
+    end
+
     def talk
-      @app.sitemap.where(:type => 'talk', :speaker => name)
+      @app.sitemap.where(:type => 'talk', :speaker => name).first
     end
   end
 end

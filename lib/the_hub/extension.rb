@@ -47,6 +47,10 @@ module TheHub
         @sessions ||= {}
       end
 
+      def speakers
+        sitemap.where(:type => 'speaker').order_by(:name).all
+      end
+
       def planner
         TheHub::Planner.new days, sitemap
       end
