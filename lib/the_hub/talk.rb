@@ -18,8 +18,12 @@ module TheHub
       data[:video]
     end
 
-    def speaker
+    def speaker_name
       data[:speaker]
+    end
+
+    def speaker
+      @app.sitemap.where(:type => "speaker", :name => speaker_name).first
     end
 
     def room
