@@ -30,6 +30,10 @@ module TheHub
       @app.preview_for_talk(eponymous_directory_path)
     end
 
+    def body
+      render :layout => false
+    end
+
     def notes
       @app.notes_for_talk(eponymous_directory_path)
     end
