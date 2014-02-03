@@ -2,12 +2,30 @@ require_relative 'session'
 module TheHub
   class Day
     attr_reader :name
+
+    def metadata
+      # OH GOD I'M SORRY.
+      @sitemap.app.data.days[code] || {}
+    end
+
     def initialize name, sitemap
       @name, @sitemap = name, sitemap
     end
 
     def shortname
       name[0..2]
+    end
+
+    def pretty_name
+      metadata["pretty_name"] || name
+    end
+
+    def location
+      metadata["location"]
+    end
+
+    def button_name
+      metadata["button_name"] || name
     end
 
     def code
