@@ -36,7 +36,7 @@ module TheHub
       if page.respond_to? :day
         page.day == @name
       else
-        @name == 'Sunday'
+        metadata["active"]
       end
     end
 
